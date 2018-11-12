@@ -14,8 +14,11 @@ const User = dbconfig.sequelize.define('users', {
  
   });
 
-  User.hasMany(Message.Message, {foreignKey: 'userId', sourceKey: 'uuid'});
-  Message.Message.belongsTo(User, {foreignKey: 'userId', targetKey: 'uuid'});
+  User.hasMany(Message.Message, {foreignKey: 'senderId', sourceKey: 'uuid'});
+  User.hasMany(Message.Message, {foreignKey: 'senderId', sourceKey: 'uuid'});
+  Message.Message.belongsTo(User, {foreignKey: 'reciverId' ,targetKey: 'uuid'});
+  Message.Message.belongsTo(User, {foreignKey: 'reciverId' ,targetKey: 'uuid'});
+
 
 
   module.exports={User}

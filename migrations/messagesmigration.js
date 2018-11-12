@@ -9,7 +9,10 @@ const Message = dbconfig.sequelize.define('messages', {
     content: {
       type: dbconfig.Sequelize.STRING
     },
-    userId:{
+      senderId:{
+        type: dbconfig.Sequelize.INTEGER
+    },
+    reciverId:{
         type: dbconfig.Sequelize.INTEGER
     }
   
